@@ -20,7 +20,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 3rem;
+  padding: 2rem 5rem;
   background-color: var(--dark-mode-elements);
   color: var(--dark-mode-text);
   font-size: .8rem;
@@ -37,13 +37,12 @@ header {
 
 main {
   background-color: var(--dark-mode-background);
-  padding: 1rem;
 }
 
 #options {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 3rem;
+  padding: 2rem 5rem;
 }
 
 #search,
@@ -71,7 +70,7 @@ main {
 
 #countries {
   display: grid;
-  padding: 1rem 3rem;
+  padding: 2rem 5rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 6rem;
 }
@@ -81,7 +80,6 @@ main {
   flex-direction: column;
   background-color: var(--dark-mode-elements);
   border-radius: 3px;
-  border-radius: 5px;
 }
 
 .country-item:hover {
