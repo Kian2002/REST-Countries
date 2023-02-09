@@ -13,6 +13,31 @@ const languages = (data) => {
   return languages;
 };
 
+const borderCountries = (data) => {
+  const borderCountries = [];
+  Object.values(data).forEach((border) => {
+    borderCountries.push(border);
+  });
+
+  const borderDiv = document.createElement("div");
+  borderDiv.classList.add("border");
+
+  const borderInnerDiv = document.createElement("div");
+  borderInnerDiv.innerHTML = `<p>Border Countries:</p>`;
+  borderInnerDiv.classList.add("border-items");
+
+  borderDiv.appendChild(borderInnerDiv);
+
+  document.querySelector(".info-wrapper").appendChild(borderDiv);
+
+  borderCountries.forEach((border) => {
+    const button = document.createElement("button");
+    button.textContent = border;
+    button.classList.add("border-btn");
+    borderInnerDiv.appendChild(button);
+  });
+};
+
 const createInfo = (data) => {
   const div = document.createElement("div");
   div.classList.add("info-section");
@@ -40,13 +65,7 @@ const createInfo = (data) => {
         <p>Currencies: ${Object.values(data.currencies)[0].name}</p>
         <p>Languages: ${languages(data.languages)}</p>
       </div>
-        
     </div>
-
-    <div class="border">
-        <p id="border">Border Countries: </p>
-    </div>
-  
   </div>
    `;
 
@@ -54,9 +73,12 @@ const createInfo = (data) => {
 };
 
 const openInfo = (data) => {
+  console.log(data);
   emptyMain();
 
   document.getElementById("countries").appendChild(createInfo(data));
+
+  borderCountries(data.borders);
 };
 
 export default openInfo;
