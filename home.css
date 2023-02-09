@@ -37,6 +37,7 @@ header {
 
 main {
   background-color: var(--dark-mode-background);
+  min-height: 100%;
 }
 
 #options {

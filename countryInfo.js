@@ -1,39 +1,44 @@
 import "./info.css";
 
-const openInfo = (e) => {
+const emptyMain = () => {
+  document.getElementById("options").innerHTML = "";
+  document.getElementById("countries").innerHTML = "";
+};
+
+const languages = (data) => {
   const languages = [];
-  Object.values(e.languages).forEach((language) => {
+  Object.values(data).forEach((language) => {
     languages.push(` ${language}`);
   });
+  return languages;
+};
 
-  const options = (document.getElementById("options").innerHTML = "");
-  const countries = document.getElementById("countries");
-  countries.innerHTML = "";
+const createInfo = (data) => {
   const div = document.createElement("div");
   div.classList.add("info-section");
 
   div.innerHTML = `
   <div class="info-image">
-    <img src="${e.flags.svg}">
+    <img src="${data.flags.svg}">
   </div>
 
   <div class="info-wrapper">
-    <h1>${e.name.common}</h1>
+    <h1>${data.name.common}</h1>
   
     <div class="info-items">
       
       <div class="info-item">
-        <p>Native Name: ${Object.values(e.name.nativeName)[0].common}</p>
-        <p>Population: ${e.population}</p>
-        <p>Region: ${e.region}</p>
-        <p>Sub Region: ${e.subregion}</p>
-        <p>Capital: ${e.capital}</p>
+        <p>Native Name: ${Object.values(data.name.nativeName)[0].common}</p>
+        <p>Population: ${data.population}</p>
+        <p>Region: ${data.region}</p>
+        <p>Sub Region: ${data.subregion}</p>
+        <p>Capital: ${data.capital}</p>
       </div>
     
       <div class="info-item">
-        <p>Top Level Domain: ${e.tld}</p>
-        <p>Currencies: ${Object.values(e.currencies)[0].name}</p>
-        <p>Languages: ${languages.toString()}</p>
+        <p>Top Level Domain: ${data.tld}</p>
+        <p>Currencies: ${Object.values(data.currencies)[0].name}</p>
+        <p>Languages: ${languages(data.languages)}</p>
       </div>
         
     </div>
@@ -45,7 +50,13 @@ const openInfo = (e) => {
   </div>
    `;
 
-  countries.appendChild(div);
+  return div;
+};
+
+const openInfo = (data) => {
+  emptyMain();
+
+  document.getElementById("countries").appendChild(createInfo(data));
 };
 
 export default openInfo;
