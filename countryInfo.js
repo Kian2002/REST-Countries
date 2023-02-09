@@ -13,6 +13,15 @@ const languages = (data) => {
   return languages;
 };
 
+const loadBorderCountry = (country) => {
+  fetch(`https://restcountries.com/v3.1/alpha/${country}`)
+    .then((response) => response.json())
+    .then((data) => openInfo(data[0]))
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 const borderCountries = (data) => {
   const borderCountries = [];
   Object.values(data).forEach((border) => {
@@ -31,9 +40,14 @@ const borderCountries = (data) => {
   document.querySelector(".info-wrapper").appendChild(borderDiv);
 
   borderCountries.forEach((border) => {
+    console.log(border);
     const button = document.createElement("button");
     button.textContent = border;
     button.classList.add("border-btn");
+    button.onclick = () => {
+      loadBorderCountry(border);
+    };
+
     borderInnerDiv.appendChild(button);
   });
 };
@@ -44,7 +58,7 @@ const createInfo = (data) => {
 
   div.innerHTML = `
   <div class="info-image">
-    <img src="${data.flags.svg}">
+    <img src="${data.flags.svg || flags.svg}" alt="image of country flag">
   </div>
 
   <div class="info-wrapper">
