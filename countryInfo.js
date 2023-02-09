@@ -1,7 +1,11 @@
 import "./info.css";
 
 const openInfo = (e) => {
-  console.log(e);
+  const languages = [];
+  Object.values(e.languages).forEach((language) => {
+    languages.push(` ${language}`);
+  });
+
   const options = (document.getElementById("options").innerHTML = "");
   const countries = document.getElementById("countries");
   countries.innerHTML = "";
@@ -19,7 +23,7 @@ const openInfo = (e) => {
     <div class="info-items">
       
       <div class="info-item">
-        <p>Native Name: ${e.name.official}</p>
+        <p>Native Name: ${Object.values(e.name.nativeName)[0].common}</p>
         <p>Population: ${e.population}</p>
         <p>Region: ${e.region}</p>
         <p>Sub Region: ${e.subregion}</p>
@@ -27,9 +31,9 @@ const openInfo = (e) => {
       </div>
     
       <div class="info-item">
-        <p>Capital: ${e.capital}</p>
-        <p>Capital: ${e.capital}</p>
-        <p>Capital: ${e.capital}</p>
+        <p>Top Level Domain: ${e.tld}</p>
+        <p>Currencies: ${Object.values(e.currencies)[0].name}</p>
+        <p>Languages: ${languages.toString()}</p>
       </div>
         
     </div>
