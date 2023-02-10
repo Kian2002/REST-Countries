@@ -16,6 +16,7 @@
 .info-image img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .info-wrapper {
@@ -49,11 +50,14 @@
 
 .border-items {
     border: 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-content: center;
     align-items: center;
     gap: 0.8rem;
     font-weight: 300;
+    width: 100%;
+    height: 100%;
 }
 
 .border-btn {
