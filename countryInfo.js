@@ -94,7 +94,9 @@ const backButton = () => {
   backButton.classList.add("back-button");
 
   backButton.onclick = () => {
-    emptyMain();
+    // remove previous elements
+    document.getElementById("options").remove();
+    document.getElementById("countries").remove();
     generateOptions();
     countries();
   };
