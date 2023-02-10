@@ -1,4 +1,5 @@
 import "./info.css";
+import countries from "./data";
 
 const emptyMain = () => {
   document.getElementById("options").innerHTML = "";
@@ -90,6 +91,11 @@ const backButton = () => {
   const backButton = document.createElement("button");
   backButton.textContent = "Back";
   backButton.classList.add("back-button");
+
+  backButton.onclick = () => {
+    countries();
+    emptyMain();
+  };
 
   return backButton;
 };
