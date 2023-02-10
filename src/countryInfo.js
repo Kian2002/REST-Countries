@@ -1,4 +1,4 @@
-import "./info.css";
+import "../info.css";
 import countries from "./data";
 import generateOptions from "./options";
 
