@@ -2,7 +2,11 @@ import "./home.css";
 import openInfo from "./countryInfo";
 
 const countries = () => {
-  const countries = document.getElementById("countries");
+  const main = document.getElementById("main");
+  const countries = document.createElement("div");
+  countries.id = "countries";
+
+  main.appendChild(countries);
 
   fetch("https://restcountries.com/v3.1/all")
     .then((response) => response.json())
