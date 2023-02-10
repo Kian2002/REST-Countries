@@ -86,9 +86,18 @@ const createInfo = (data) => {
   return div;
 };
 
+const backButton = () => {
+  const backButton = document.createElement("button");
+  backButton.textContent = "Back";
+  backButton.classList.add("back-button");
+
+  return backButton;
+};
+
 const openInfo = (data) => {
   console.log(data);
   emptyMain();
+  document.getElementById("options").appendChild(backButton());
 
   document.getElementById("countries").appendChild(createInfo(data));
 
