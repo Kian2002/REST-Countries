@@ -76,6 +76,12 @@ main {
   grid-gap: 6rem;
 }
 
+.error {
+  font-weight: 800;
+  color: var(--dark-mode-text);
+  font-size: 5rem;
+}
+
 .country-item {
   display: flex;
   flex-direction: column;

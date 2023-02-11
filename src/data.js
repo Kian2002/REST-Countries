@@ -41,6 +41,8 @@ const countries = (searchString) => {
     })
     .catch((err) => {
       console.log(err);
+      countries.textContent = "Error Not Found";
+      countries.classList.add("error");
     });
 
   return countries;
