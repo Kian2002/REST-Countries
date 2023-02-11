@@ -1,14 +1,18 @@
 import "../home.css";
 import openInfo from "./countryInfo";
 
-const countries = () => {
+const countries = (searchString) => {
   const main = document.getElementById("main");
   const countries = document.createElement("div");
   countries.id = "countries";
 
   main.appendChild(countries);
 
-  fetch("https://restcountries.com/v3.1/all")
+  fetch(
+    searchString
+      ? `https://restcountries.com/v3.1/name/${searchString}`
+      : "https://restcountries.com/v3.1/all"
+  )
     .then((response) => response.json())
     .then((data) => {
       data.forEach((d) => {

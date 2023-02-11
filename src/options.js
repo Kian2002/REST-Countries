@@ -1,3 +1,5 @@
+import countries from "./data";
+
 const generateOptions = () => {
   const div = document.createElement("div");
   div.id = "options";
@@ -7,6 +9,13 @@ const generateOptions = () => {
   input.name = "search";
   input.id = "search";
   input.placeholder = "Search for a country...";
+  input.value - "";
+
+  input.oninput = (e) => {
+    let searchString = e.target.value;
+    document.getElementById("countries").remove();
+    countries(searchString);
+  };
 
   const button = document.createElement("button");
   button.type = "button";
