@@ -14,6 +14,7 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   font-weight: 600;
   height: 100%;
+  background-color: var(--dark-mode-background);
 }
 
 header {
@@ -36,8 +37,7 @@ header {
 }
 
 main {
-  background-color: var(--dark-mode-background);
-  min-height: 100%;
+  height: fit-content;
 }
 
 #options {
