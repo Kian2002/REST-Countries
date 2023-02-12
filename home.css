@@ -5,16 +5,16 @@
 }
 
 :root {
-  --dark-mode-elements: hsl(209, 23%, 22%);
-  --dark-mode-background: hsl(207, 26%, 17%);
-  --dark-mode-text: hsl(0, 0%, 100%);
+  --elements: hsl(209, 23%, 22%);
+  --background: hsl(207, 26%, 17%);
+  --text: hsl(0, 0%, 100%);
 }
 
 html,
 body {
   font-weight: 600;
   height: 100%;
-  background-color: var(--dark-mode-background);
+  background-color: var(--background);
 }
 
 header {
@@ -22,15 +22,15 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 5rem;
-  background-color: var(--dark-mode-elements);
-  color: var(--dark-mode-text);
+  background-color: var(--elements);
+  color: var(--text);
   font-size: .8rem;
   font-weight: 800;
 }
 
-.dark {
+.mode {
   font-weight: 300;
-  color: var(--dark-mode-text);
+  color: var(--text);
   background: none;
   border: none;
   cursor: pointer;
@@ -38,6 +38,7 @@ header {
 
 main {
   height: fit-content;
+  background-color: var(--background);
 }
 
 #options {
@@ -48,19 +49,19 @@ main {
 
 #search,
 #filter {
-  background-color: var(--dark-mode-elements);
+  background-color: var(--elements);
   border-radius: 3px;
   border: none;
   padding: .7rem;
   width: 20%;
-  color: var(--dark-mode-text);
+  color: var(--text);
   font-weight: 300;
 }
 
 #search::placeholder {
   font-size: .8rem;
   font-weight: 300;
-  color: var(--dark-mode-text);
+  color: var(--text);
 }
 
 #filter {
@@ -78,14 +79,14 @@ main {
 
 .error {
   font-weight: 800;
-  color: var(--dark-mode-text);
+  color: var(--text);
   font-size: 5rem;
 }
 
 .country-item {
   display: flex;
   flex-direction: column;
-  background-color: var(--dark-mode-elements);
+  background-color: var(--elements);
   border-radius: 3px;
 }
 
@@ -104,7 +105,7 @@ main {
   flex-direction: column;
   gap: 1rem;
   padding: 2rem;
-  color: var(--dark-mode-text);
+  color: var(--text);
   font-weight: 600;
 }
 

@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     gap: 10rem;
-    color: var(--dark-mode-text);
+    color: var(--text);
 }
 
 .info-image {
@@ -62,10 +62,10 @@
 
 .border-btn {
     padding: 0.3rem 1.5rem;
-    background-color: var(--dark-mode-elements);
-    color: var(--dark-mode-text);
+    background-color: var(--elements);
+    color: var(--text);
     border: none;
-    box-shadow: -1px -1px 10px var(--dark-mode-elements);
+    box-shadow: -1px -1px 10px var(--elements);
     border-radius: 3px;
     font-weight: 300;
     cursor: pointer;
@@ -73,10 +73,10 @@
 
 .back-button {
     padding: .8rem 3rem;
-    background-color: var(--dark-mode-elements);
-    color: var(--dark-mode-text);
+    background-color: var(--elements);
+    color: var(--text);
     border: none;
-    box-shadow: -1px -1px 10px var(--dark-mode-elements);
+    box-shadow: -1px -1px 10px var(--elements);
     border-radius: 3px;
     font-weight: 300;
     cursor: pointer;
