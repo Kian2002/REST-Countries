@@ -14,18 +14,42 @@ const generateOptions = () => {
   input.oninput = (e) => {
     let searchString = e.target.value;
     document.getElementById("countries").remove();
-    countries(searchString);
+    countries(`https://restcountries.com/v3.1/name/${searchString}`);
   };
 
-  const button = document.createElement("button");
-  button.type = "button";
-  button.id = "filter";
-  button.textContent = "Filter by Region";
+  const select = document.createElement("select");
+  select.id = "filter";
+  select.name = "region";
+
+  const mainOption = document.createElement("option");
+  mainOption.value = "all";
+  mainOption.textContent = "Filter by Region";
+  mainOption.setAttribute("hidden", "hidden");
+
+  select.appendChild(mainOption);
+  select.appendChild(generateValues("Africa"));
+  select.appendChild(generateValues("America"));
+  select.appendChild(generateValues("Asia"));
+  select.appendChild(generateValues("Europe"));
+  select.appendChild(generateValues("Oceania"));
+
+  select.onchange = () => {
+    document.getElementById("countries").remove();
+    countries(`https://restcountries.com/v3.1/region/${select.value}`);
+  };
 
   div.appendChild(input);
-  div.appendChild(button);
+  div.appendChild(select);
 
   document.getElementById("main").appendChild(div);
+};
+
+const generateValues = (value) => {
+  const option = document.createElement("option");
+  option.value = value;
+  option.textContent = value;
+
+  return option;
 };
 
 export default generateOptions;
